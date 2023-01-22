@@ -1,6 +1,7 @@
 package net.ikenna.employee_service.controller;
 
 import lombok.AllArgsConstructor;
+import net.ikenna.employee_service.dto.APIResponseDto;
 import net.ikenna.employee_service.dto.EmployeeDto;
 import net.ikenna.employee_service.service.EmployeeService;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/{employeeId}")
-    public ResponseEntity<EmployeeDto> getEmployee(@PathVariable Long employeeId){
+    public ResponseEntity<APIResponseDto> getEmployee(@PathVariable Long employeeId){
         return ResponseEntity.ok(employeeService.getEmployee(employeeId));
     }
 }
